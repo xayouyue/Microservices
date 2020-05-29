@@ -1,0 +1,10 @@
+spring:
+  #默认调用就是spring内置的连接池Hikari
+  datasource:
+    #springboot默认加载的最新的mysql驱动，用8.x以上版本的mysql驱动时，必须在url中写时区参数
+    url: jdbc:mysql://localhost:3306/user?useSSL=false&serverTimezone=Asia/Shanghai
+    username: root
+    password: root
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
