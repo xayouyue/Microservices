@@ -1,0 +1,6 @@
+spring:
+  application:
+    name: Youyue
+  profiles:
+    active: dev
+
