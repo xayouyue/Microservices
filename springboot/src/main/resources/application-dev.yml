@@ -11,5 +11,15 @@ spring:
 server:
   #设置web服务的启动端口
   port: 8088
-  servlet:
-    context-path: /a
+#  servlet:
+#    context-path: /a
+youyue:
+  data:
+    url: jdbc:mysql://xxxxxxx/
+    user: root
+    pwd: root
+
+#a:
+#  b:
+#    c: 123
+

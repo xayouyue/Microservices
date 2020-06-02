@@ -1,0 +1,22 @@
+info:
+  name: YOUYUE
+  version: 1.0
+  description: kissli
+  info:
+    info: info
+
+
+management:
+  server:
+    port: 9001
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    shutdown:
+      enabled: true
+
+spring:
+  application:
+    name: YOUYUE

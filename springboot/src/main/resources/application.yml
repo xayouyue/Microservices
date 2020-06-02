@@ -3,4 +3,3 @@ spring:
     name: Youyue
   profiles:
     active: dev
-

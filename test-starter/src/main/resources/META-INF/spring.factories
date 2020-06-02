@@ -1,0 +1,2 @@
+#前面这个类就指向了SpringBoot的启动时候的自动装配选项，后面设定的类，就是会被自动装配装载的类
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=com.youyue.teststarter.StarterConfig
