@@ -1,0 +1,12 @@
+server:
+  port: 8002
+eureka:
+  instance:
+    # \u6CE8\u518C\u5230Eureka\u4E2D\u5FC3\u7684\u670D\u52A1\u540D
+    appname: eureka-server
+    # \u5F53\u524D\u670D\u52A1\u7684\u552F\u4E00\u5B9E\u4F8BID
+    instance-id: ${eureka.instance.appname}-${server.port}
+  client:
+    # \u6CE8\u518C\u5F53\u524D\u7684\u5E94\u7528\u7684\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740
+    service-url:
+      defaultZone: http://192.168.56.1:8001/eureka/
