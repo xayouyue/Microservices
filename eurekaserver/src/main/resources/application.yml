@@ -6,12 +6,11 @@ eureka:
     appname: eureka-server
     # \u5F53\u524D\u670D\u52A1\u7684\u552F\u4E00\u5B9E\u4F8BID
     instance-id: ${eureka.instance.appname}-${server.port}
+    hostname: eureka1
   client:
     # \u6CE8\u518C\u5F53\u524D\u7684\u5E94\u7528\u7684\u6CE8\u518C\u4E2D\u5FC3\u7684\u5730\u5740
-    # service-url:
-    #  defaultZone: http://192.168.56.1:8001/eureka/
+    service-url:
+      defaultZone: http://eureka1:8001/eureka/
     register-with-eureka: false
   server:
     enable-self-preservation: false
-    # \u6BCF\u9694\u591A\u4E45\u6267\u884C\u4E00\u6B21\u5254\u9664\u4EFB\u52A1\uFF0C\u5C06\u6240\u6709\u5FC3\u8DF3\u5931\u6548\u7684\u4EFB\u52A1\u4ECE\u670D\u52A1\u4E2D\u5FC3\u5220\u9664
-    eviction-interval-timer-in-ms: 5000

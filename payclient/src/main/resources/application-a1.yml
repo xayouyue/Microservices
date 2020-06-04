@@ -1,24 +1,19 @@
 server:
-  port: 10001
+  port: 9002
 eureka:
   instance:
-    appname: shop-client
+    appname: payclient
     instance-id: ${eureka.instance.appname}-${server.port}
     # \u5FC3\u8DF3\u7684\u53D1\u9001\u95F4\u9694\u65F6\u95F4
     lease-renewal-interval-in-seconds: 5
     # \u5FC3\u8DF3\u5931\u6548\u65F6\u95F4\uFF0C\u591A\u4E45\u65E0\u6CD5\u6536\u5230\u5FC3\u8DF3\u5C31\u8BA4\u4E3A\u670D\u52A1\u5931\u6548
     lease-expiration-duration-in-seconds: 10
+    # \u865A\u62DF\u4E3B\u673A\u540D
+    virtual-host-name: payclient
   client:
     # \u5411Eureka\u670D\u52A1\u4E2D\u5FC3\u6CE8\u518C
-    register-with-eureka: false
+    register-with-eureka: true
     # \u4ECEEureka\u670D\u52A1\u4E2D\u5FC3\u62C9\u53D6\u6240\u6709\u7684\u670D\u52A1\u4FE1\u606F
-    fetch-registry: true
+    fetch-registry: false
     service-url:
-      defaultZone: http://192.168.56.1:8001/eureka/
-    # \u5BA2\u6237\u7AEF\u7684\u53D1\u73B0\u884C\u4E3A\u7684\u62C9\u53D6\u95F4\u9694
-    registry-fetch-interval-seconds: 10
-    # \u5173\u95ED\u589E\u91CF\u62C9\u53D6
-    disable-delta: false
-ribbon:
-  eureka:
-    enabled: false
+      defaultZone: http://eureka1:8001/eureka/

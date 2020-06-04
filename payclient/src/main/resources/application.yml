@@ -16,4 +16,4 @@ eureka:
     # \u4ECEEureka\u670D\u52A1\u4E2D\u5FC3\u62C9\u53D6\u6240\u6709\u7684\u670D\u52A1\u4FE1\u606F
     fetch-registry: false
     service-url:
-      defaultZone: http://192.168.56.1:8001/eureka/
+      defaultZone: http://eureka1:8001/eureka/

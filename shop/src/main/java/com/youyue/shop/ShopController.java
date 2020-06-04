@@ -3,6 +3,7 @@ package com.youyue.shop;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cloud.client.ServiceInstance;
 import org.springframework.cloud.client.discovery.DiscoveryClient;
+import org.springframework.cloud.client.loadbalancer.LoadBalancerClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
@@ -19,6 +20,9 @@ public class ShopController {
     @Autowired
     RestTemplate restTemplate;
 
+    @Autowired
+    LoadBalancerClient loadBalancerClient;
+
     @GetMapping("/pay")
     public String shop() {
         discoveryClient.getServices().forEach(System.out::println);
@@ -32,6 +36,11 @@ public class ShopController {
         sb.append(host).append(":").append(port).append("/pay");
         String response = restTemplate.getForObject(sb.toString(),String.class);
         return response;
+    }
+
+    @GetMapping("/pay2")
+    public String pay() {
+        return restTemplate.getForObject("http://payclient/pay", String.class);
     }
 
 }
