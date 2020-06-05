@@ -19,6 +19,15 @@ eureka:
     registry-fetch-interval-seconds: 10
     # \u5173\u95ED\u589E\u91CF\u62C9\u53D6
     disable-delta: false
+
 ribbon:
-  eureka:
-    enabled: false
+  # \u53D1\u8D77\u8FDE\u63A5\u8D85\u65F6\u65F6\u95F4
+  ConnectTimeout: 1000
+  # \u8BFB\u53D6\u54CD\u5E94\u7684\u8D85\u65F6\u65F6\u95F4
+  ReadTimeout: 2000
+  # \u6700\u5927\u91CD\u8BD5\u6B21\u6570
+  MaxAutoRetries: 3
+  # \u6700\u5927\u8282\u70B9\u5207\u6362\u6B21\u6570
+  MaxAutoRetriesNextServer: 1
+  # \u5F00\u542F\u5BF9\u4EFB\u610F\u7684\u8BF7\u6C42\u7C7B\u578B\u90FD\u53D1\u8D77\u91CD\u8BD5\u673A\u5236
+  OkToRetryOnAllOperations: false

@@ -9,9 +9,9 @@
         <relativePath/> <!-- lookup parent from repository -->
     </parent>
     <groupId>com.youyue</groupId>
-    <artifactId>shop</artifactId>
+    <artifactId>hystrix</artifactId>
     <version>0.0.1-SNAPSHOT</version>
-    <name>shop</name>
+    <name>hystrix</name>
     <description>Demo project for Spring Boot</description>
 
     <properties>
@@ -30,12 +30,9 @@
         </dependency>
         <dependency>
             <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-netflix-ribbon</artifactId>
+            <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
         </dependency>
-        <dependency>
-            <groupId>org.springframework.retry</groupId>
-            <artifactId>spring-retry</artifactId>
-        </dependency>
+
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-test</artifactId>

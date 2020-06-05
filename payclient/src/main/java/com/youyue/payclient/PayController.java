@@ -11,7 +11,8 @@ public class PayController {
     private String instanceId;
 
     @GetMapping("/pay")
-    public String pay() {
+    public String pay() throws InterruptedException {
+        Thread.sleep(5000);
         return instanceId;
     }
 
