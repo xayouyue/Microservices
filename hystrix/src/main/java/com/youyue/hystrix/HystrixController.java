@@ -11,8 +11,18 @@ public class HystrixController {
     private HystrixService hystrixService;
 
     @RequestMapping("/test")
-    public String test() {
+    public String test() throws InterruptedException {
+        Thread.sleep(10000);
         return hystrixService.test();
     }
+    @RequestMapping("/pay")
+    public String pay() {
+        return hystrixService.pay();
+    }
+    @RequestMapping("/shop")
+    public String shop() {
+        return hystrixService.shop();
+    }
+
 
 }

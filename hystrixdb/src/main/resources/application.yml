@@ -1,0 +1,27 @@
+server:
+  port: 6001
+
+eureka:
+  instance:
+    appname: turbine
+    instance-id: ${eureka.instance.appname}-${server.port}
+    # \u5FC3\u8DF3\u7684\u53D1\u9001\u95F4\u9694\u65F6\u95F4
+    lease-renewal-interval-in-seconds: 5
+    # \u5FC3\u8DF3\u5931\u6548\u65F6\u95F4\uFF0C\u591A\u4E45\u65E0\u6CD5\u6536\u5230\u5FC3\u8DF3\u5C31\u8BA4\u4E3A\u670D\u52A1\u5931\u6548
+    lease-expiration-duration-in-seconds: 10
+  client:
+    # \u5411Eureka\u670D\u52A1\u4E2D\u5FC3\u6CE8\u518C
+    register-with-eureka: false
+    # \u4ECEEureka\u670D\u52A1\u4E2D\u5FC3\u62C9\u53D6\u6240\u6709\u7684\u670D\u52A1\u4FE1\u606F
+    fetch-registry: true
+    service-url:
+      defaultZone: http://eureka1:8001/eureka/
+    # \u5BA2\u6237\u7AEF\u7684\u53D1\u73B0\u884C\u4E3A\u7684\u62C9\u53D6\u95F4\u9694
+    registry-fetch-interval-seconds: 10
+    # \u5173\u95ED\u589E\u91CF\u62C9\u53D6
+    disable-delta: false
+
+turbine:
+  app-config: hystrix
+  cluster-name-expression: new String("default")
+  combine-host-port: true
