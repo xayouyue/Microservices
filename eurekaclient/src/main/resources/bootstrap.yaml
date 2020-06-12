@@ -1,0 +1,14 @@
+spring:
+  cloud:
+    config:
+      discovery:
+        enabled: true
+        service-id: configserver
+      profile: prop
+      label: master
+  application:
+    name: eurekaclient
+eureka:
+  client:
+    service-url:
+      defaultZone: http://
