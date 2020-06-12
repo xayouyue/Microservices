@@ -1,0 +1,9 @@
+server:
+  port: 8001
+eureka:
+  client:
+    service-url:
+      defaultZone: http://eureka1:8001/eureka/
+    register-with-eureka: false
+  server:
+    enable-self-preservation: false
